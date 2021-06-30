@@ -44,6 +44,7 @@ $primary-grey: #F4F5F7;
   font-style: normal;
 }
 
+
 .inner{
   width: 77.08%;
   margin: 0 auto;
@@ -57,7 +58,8 @@ $primary-grey: #F4F5F7;
 }
 
 .news{
+  overflow: hidden;
   width: 100%;
-  height: 1750px;
+  height: 1550px;
 }
 </style>
