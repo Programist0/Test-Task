@@ -65,6 +65,11 @@ $primary-grey: #F4F5F7;
         background: #8C30F5;
         border-radius: 6px;
         text-align: center;
+        transition: 1s;
+        &:hover{
+          width: 215px!important;
+          cursor: pointer!important;
+        }
       }
     }
 

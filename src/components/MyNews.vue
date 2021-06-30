@@ -21,9 +21,9 @@
       </a>
     </div>
   </div>
-  <div class="news-block__list-of-news">
+  <div class="news-block__list-of-news" :style="{marginLeft: toLeft + 'px'}">
     <div class="news-block__list-of-news__overlay">
-      <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg @click="goLeft" width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M35.2627 17.6062C34.6939 17.0375 33.8002 17.0375 33.2314 17.6062C32.6627 18.175 32.6627 19.0688 33.2314 19.6375L37.1314 23.6187H13.1627C12.3502 23.6187 11.7002 24.2687 11.7002 25.0812C11.7002 25.8937 12.3502 26.5438 13.1627 26.5438H37.1314L33.2314 30.525C32.6627 31.0937 32.6627 31.9875 33.2314 32.5562C33.4752 32.8 33.8814 32.9625 34.2064 32.9625C34.6127 32.9625 34.9377 32.8 35.1814 32.5562L39.6502 28.0063C41.1939 26.4625 41.1939 23.9437 39.6502 22.4L35.2627 17.6062Z" fill="#747579"/>
         <path d="M26.0001 0.0561523C12.1876 0.0561523 0.975098 11.1874 0.975098 24.9999C0.975098 38.8124 12.1876 50.0249 26.0001 50.0249C39.8126 50.0249 51.0251 38.8124 51.0251 24.9999C51.0251 11.1874 39.8126 0.0561523 26.0001 0.0561523ZM26.0001 47.1812C13.8126 47.1812 3.81885 37.1874 3.81885 24.9999C3.81885 12.8124 13.8126 2.8999 26.0001 2.8999C38.1876 2.8999 48.1813 12.8124 48.1813 24.9999C48.1813 37.1874 38.1876 47.1812 26.0001 47.1812Z" fill="#747579"/>
       </svg>
@@ -51,12 +51,23 @@ export default {
   data: function(){
     return{
       items: [], code: [], id: [],
-      itemMain: '', codeMain: '', idMain: '', previewMain: ''
+      itemMain: '', codeMain: '', idMain: '', previewMain: '',
+      toLeft: 0
     }
   },
   computed:{
     previewHTML: function (){
       return this.previewMain.split('').splice(0, 290).join('');
+    }
+  },
+  methods:{
+    goLeft: function (){
+      if (this.toLeft > -960){
+        this.toLeft -= 320;
+      }else{
+        alert('Have a good day! With great wishes :-)');
+        this.toLeft = 0;
+      }
     }
   },
   created: async function() {
@@ -157,6 +168,7 @@ $primary-grey: #DEDEDE;
     @extend %flex-block;
     padding-top: 60px;
     position: relative;
+    transition: 1s;
 
     .news-block__list-of-news__overlay{
       position: absolute;

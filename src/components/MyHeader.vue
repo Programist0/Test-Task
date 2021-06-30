@@ -79,6 +79,11 @@ header {
         @extend %typography;
         color: $primary_black;
         margin-left: 32px;
+        transition: 0.5s;
+
+        &:hover {
+          color: $primary-violet!important;
+        }
       }
     }
 
@@ -104,6 +109,11 @@ header {
       border-radius: 6px;
       text-align: center;
       margin: 0 10px;
+      transition: 1s;
+      &:hover{
+        padding: 10px 30px!important;
+        cursor: pointer!important;
+      }
     }
   }
 }
