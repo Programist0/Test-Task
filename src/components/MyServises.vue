@@ -133,7 +133,13 @@ $primary-grey: #F4F5F7;
 .info__content__item:hover .info__content__item__article, .info__content__item:hover .info__content__item__href{
   display: block!important;
   margin-left: 9.14%;
-
 }
-
+@media (max-width: 580px) {
+  .info{
+    overflow: hidden!important;
+  }
+  .info__content {
+    width: 200vw !important;
+  }
+}
 </style>

@@ -107,4 +107,24 @@ footer{
     }
   }
 }
+@media (max-width: 580px) {
+  .menu__list, .copyright{
+    flex-direction: column;
+  }
+  .divider{
+    margin-top: 20px;
+  }
+  footer{
+    height: 577px;
+  }
+  .menu__list__item{
+    font-size: 16px;
+    line-height: 26px;
+    margin: 16px 0;
+  }
+  .copyright__media{
+    order: -1;
+    margin-bottom: 55px;
+  }
+}
 </style>

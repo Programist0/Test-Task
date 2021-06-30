@@ -69,4 +69,27 @@ export default {
     }
   }
 }
+@media (max-width: 580px) {
+  .contact-us {
+    height: 715px!important;
+    flex-direction: column!important;
+    padding: 0!important;
+    justify-content: center!important;
+  }
+  .contact-us__info__input{
+    flex-direction: column!important;
+  }
+  .contact-us .contact-us__info{
+    text-align: center!important;
+    width: 85%!important;
+  }
+  .contact-us__info__input input{
+    border-radius: 5px!important;
+  }
+  .contact-us__info__input__submit{
+    border-radius: 5px!important;
+    margin-top: 16px;
+  }
+}
+
 </style>

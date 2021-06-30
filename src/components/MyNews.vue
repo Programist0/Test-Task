@@ -65,7 +65,7 @@ export default {
       if (this.toLeft > -960){
         this.toLeft -= 320;
       }else{
-        alert('Have a good day! With great wishes :-)');
+        alert('Have a good day! :-)');
         this.toLeft = 0;
       }
     }
@@ -224,6 +224,22 @@ $primary-grey: #DEDEDE;
         line-height: 130%;
       }
     }
+  }
+}
+@media (max-width: 580px) {
+  .news-block__big-news{
+    flex-direction: column;
+  }
+  #id47936{
+    width: 100%!important;
+    border-radius: 5px!important;
+  }
+  .news-block__big-news__info{
+    margin-left: 0!important;
+    margin-top: 24px!important;
+  }
+  .news-block__big-news__info__head{
+    margin-top: 16px!important;
   }
 }
 </style>

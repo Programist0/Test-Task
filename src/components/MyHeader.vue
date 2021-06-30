@@ -11,6 +11,7 @@
           <path d="M87.3581 21.4449V5.96327H91.5385V21.4449H87.3581Z" fill="#FE9A22"/>
           <path d="M103.11 17.7178H105V21.4449H102.051C100.924 21.4449 99.9414 21.2251 99.1015 20.7855C98.2807 20.3459 97.6508 19.7152 97.2117 18.8933C96.7727 18.0523 96.5531 17.0584 96.5531 15.9116V9.31762H93.7471V8.42886L99.8746 1.92084H100.648V5.96327H104.914V9.31762H100.734V15.3669C100.734 16.1123 100.934 16.6953 101.335 17.1158C101.755 17.5171 102.347 17.7178 103.11 17.7178Z" fill="#FE9A22"/>
         </svg>
+
       </div>
       <div class="menu">
         <ul class="menu__list">
@@ -29,13 +30,46 @@
       <div class="contact-us">
         Связаться с нами
       </div>
+      <div class="menu-button" @click="displayMenu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 17C3 17.5523 3.44772 18 4 18H20C20.5523 18 21 17.5523 21 17C21 16.4477 20.5523 16 20 16H4C3.44772 16 3 16.4477 3 17ZM3 12C3 12.5523 3.44772 13 4 13H20C20.5523 13 21 12.5523 21 12C21 11.4477 20.5523 11 20 11H4C3.44772 11 3 11.4477 3 12ZM4 6C3.44772 6 3 6.44772 3 7C3 7.55228 3.44772 8 4 8H20C20.5523 8 21 7.55228 21 7C21 6.44772 20.5523 6 20 6H4Z" fill="#18191F"/>
+      </svg>
+      </div>
+      <div class="mobile-menu" :style="{display: mobileMenu}">
+        <div class="phone-number">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" >
+            <path d="M4.0461 1.36403L2.69945 1.51366C1.76976 1.61696 1.05504 2.36083 1.20903 3.28349C1.48568 4.941 2.40687 7.70203 5.35188 10.647C8.29683 13.592 11.0582 14.5136 12.716 14.7905C13.6388 14.9446 14.3829 14.2299 14.4862 13.3L14.6358 11.9537C14.7239 11.1611 14.3326 10.3919 13.6401 9.99626L12.671 9.44266C11.9679 9.04098 11.0829 9.15955 10.5103 9.73216C10.0857 10.1568 9.47204 10.336 8.94197 10.0538C8.48375 9.80996 7.88557 9.40949 7.23795 8.76187C6.59034 8.11426 6.18987 7.51608 5.94599 7.05786C5.66387 6.52779 5.84307 5.91411 6.26767 5.48952C6.84028 4.91691 6.95885 4.03192 6.55716 3.32878L6.00357 2.35973C5.60797 1.66723 4.83876 1.27596 4.0461 1.36403Z" stroke="#8C30F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          <a href="tel:+380677770000">067-777-00-00</a>
+        </div>
+        <ul class="menu__list">
+          <li class="menu__list__item"><a href="#">О нас</a></li>
+          <li class="menu__list__item"><a href="#">Почему мы</a></li>
+          <li class="menu__list__item"><a href="#">Наши услуги</a></li>
+          <li class="menu__list__item"><a href="#">Новости</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 </template>
 
 <script>
 export default {
-  name: "MyHeader"
+  name: "MyHeader",
+  data: function(){
+    return{
+      mobileMenu: 'none'
+    }
+  },
+  methods: {
+      displayMenu() {
+        if(this.mobileMenu === 'none'){
+          this.mobileMenu = 'block!important';
+        } else{
+          this.mobileMenu = "none";
+        }
+      }
+  }
 }
 </script>
 
@@ -63,7 +97,9 @@ header {
       font-size: 14px;
       line-height: 20px;
     }
-
+    .menu-button{
+      display: none;
+    }
     .logo {
       span {
         color: $primary-orange;
@@ -117,4 +153,48 @@ header {
     }
   }
 }
+
+@media (max-width: 1096px) {
+  header .inner{
+    justify-content: space-between!important;
+  }
+
+  .hide{
+    display: none!important;
+  }
+  .menu, .phone-number, .contact-us{
+    display: none!important;
+  }
+  .menu-button{
+    display: block!important;
+  }
+  .mobile-menu{
+    bottom: 0;
+    position: absolute;
+    display: block;
+    background: white;
+    height: calc(100vh - 72px);
+    width: 100vw;
+    left: 0;
+    transition: 0.5s;
+
+    .phone-number{
+      display: flex !important;
+      margin-right: 0!important;
+      justify-content: center;
+      margin-left: 16px!important;
+    }
+    .menu__list{
+      flex-direction: column;
+      margin-top: 16px;
+      .menu__list__item{
+        margin: 16px 0;
+        font-weight: 500!important;
+        font-size: 24px!important;
+        line-height: 20px!important;
+      }
+    }
+  }
+}
+
 </style>

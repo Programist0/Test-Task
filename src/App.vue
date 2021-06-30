@@ -62,4 +62,12 @@ $primary-grey: #F4F5F7;
   width: 100%;
   height: 1550px;
 }
+@media (max-width: 580px) {
+  .inner{
+    width: 90%!important;
+  }
+  .news{
+    height: 2350px!important;
+  }
+}
 </style>

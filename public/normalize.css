@@ -102,3 +102,15 @@ a{
 #id47932{
     background-image: url(./img/id47932.svg);
 }
+
+@media (max-width: 1096px) {
+    .top-bar {
+        background-image: url(./img/top-bar-mobile.svg);
+    }
+}
+
+@media (max-width: 580px) {
+    .top-bar {
+        background-size: contain!important;
+    }
+}

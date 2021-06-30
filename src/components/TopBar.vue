@@ -74,4 +74,19 @@ $primary-grey: #F4F5F7;
     }
 
 }
+
+@media (max-width: 1096px) {
+  h1{
+    font-weight: 800;
+    font-size: 48px!important;
+    line-height: 140%!important;
+  }
+  .top-bar .inner__info{
+    padding-top: 500px!important;
+    width: 100%!important;
+  }
+  .top-bar{
+    height: 1003px!important;
+  }
+}
 </style>
