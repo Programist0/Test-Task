@@ -20,6 +20,7 @@
         <li class="menu__list__item"><a href="#">Контакты</a></li>
       </ul>
     </div>
+
     <div class="divider"></div>
     <div class="copyright">
       <div class="copyright__info">© 2021 Wabbit. All rights reserved</div>
