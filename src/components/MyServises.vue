@@ -6,6 +6,7 @@
         <h3 class="info__content__item__head">{{item}}</h3>
         <article class="info__content__item__article" v-html="infos[idx]"></article>
         <a :href="code[idx]" class="info__content__item__href">Подробнее</a>
+
       </div>
     </div>
     <div class="info__href">

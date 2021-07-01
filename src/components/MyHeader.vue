@@ -11,7 +11,6 @@
           <path d="M87.3581 21.4449V5.96327H91.5385V21.4449H87.3581Z" fill="#FE9A22"/>
           <path d="M103.11 17.7178H105V21.4449H102.051C100.924 21.4449 99.9414 21.2251 99.1015 20.7855C98.2807 20.3459 97.6508 19.7152 97.2117 18.8933C96.7727 18.0523 96.5531 17.0584 96.5531 15.9116V9.31762H93.7471V8.42886L99.8746 1.92084H100.648V5.96327H104.914V9.31762H100.734V15.3669C100.734 16.1123 100.934 16.6953 101.335 17.1158C101.755 17.5171 102.347 17.7178 103.11 17.7178Z" fill="#FE9A22"/>
         </svg>
-
       </a>
       <div class="menu">
         <ul class="menu__list">
@@ -30,9 +29,8 @@
       <div class="contact-us">
         Связаться с нами
       </div>
-      <div class="menu-button" @click="displayMenu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 17C3 17.5523 3.44772 18 4 18H20C20.5523 18 21 17.5523 21 17C21 16.4477 20.5523 16 20 16H4C3.44772 16 3 16.4477 3 17ZM3 12C3 12.5523 3.44772 13 4 13H20C20.5523 13 21 12.5523 21 12C21 11.4477 20.5523 11 20 11H4C3.44772 11 3 11.4477 3 12ZM4 6C3.44772 6 3 6.44772 3 7C3 7.55228 3.44772 8 4 8H20C20.5523 8 21 7.55228 21 7C21 6.44772 20.5523 6 20 6H4Z" fill="#18191F"/>
-      </svg>
+      <div class="menu-button" @click="displayMenu">
+          <img :src="'./img/'+mobileIcon+'.svg'" alt="">
       </div>
       <div class="mobile-menu" :style="{display: mobileMenu}">
         <div class="phone-number">
@@ -58,15 +56,18 @@ export default {
   name: "MyHeader",
   data: function(){
     return{
-      mobileMenu: 'none'
+      mobileMenu: 'none',
+      mobileIcon: 'menu'
     }
   },
   methods: {
       displayMenu() {
         if(this.mobileMenu === 'none'){
           this.mobileMenu = 'block!important';
+          this.mobileIcon = 'close';
         } else{
           this.mobileMenu = "none";
+          this.mobileIcon = 'menu';
         }
       }
   }

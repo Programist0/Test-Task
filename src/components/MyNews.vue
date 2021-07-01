@@ -74,7 +74,6 @@ export default {
     let url = 'https://b24crm-nst.s11.itua.in.ua/rest/513/tz8j9hozz843f81k/lists.element.get.json?IBLOCK_TYPE_ID=lists&IBLOCK_ID=153&ELEMENT_ORDER%5bID%5d=DESC';
     let response = await fetch(url);
     let comits = await response.json();
-    console.log(comits);
     comits.result.forEach((comit,index) => {
       if (index) {
         this.items.push(comit['NAME']);

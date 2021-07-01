@@ -79,6 +79,11 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        transition: 1s;
+        &:hover{
+          background: #555;
+        }
       }
     }
   }
