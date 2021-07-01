@@ -174,7 +174,7 @@ $primary-grey: #DEDEDE;
       position: absolute;
       width: 100vw;
       height: 100%;
-      left: 94%;
+      right: -92vw;
       top: 0;
       background: #FFFFFF;
       opacity: 0.6;

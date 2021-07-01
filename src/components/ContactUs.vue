@@ -3,9 +3,10 @@
   <div class="contact-us__illustration"></div>
   <div class="contact-us__info">
     <div class="contact-us__info__head">Более 569 клиентов уже написали нам</div>
+    <div class="contact-us__info__push">{{inputInfo}}</div>
     <div class="contact-us__info__input">
-      <input type="text" v-model="inputText">
-      <div class="contact-us__info__input__submit">Отправить</div>
+      <input type="text" :placeholder="inputPlaceholder" v-model="inputText" id="contact-us__info__input__text">
+      <div class="contact-us__info__input__submit" @click="inputSend">Отправить</div>
     </div>
   </div>
 </div>
@@ -16,7 +17,14 @@ export default {
   name: "ContactUs",
   data: function(){
     return{
-      inputText: 'Напишите ваш email'
+      inputText: '', inputPlaceholder: 'Напишите ваш email', inputInfo: ''
+    }
+  },
+  methods:{
+    inputSend: function (){
+      this.inputText = '';
+      this.inputInfo = 'Отправлено успешно!';
+      setTimeout(() => this.inputInfo = '', 2000);
     }
   }
 }
@@ -32,12 +40,18 @@ export default {
   .contact-us__info{
     width: 56.05%;
 
+    .contact-us__info__push{
+      color: #FFFFFF;
+      font-size: 14px;
+      line-height: 24px;
+      height: 20px;
+    }
     .contact-us__info__head{
       font-weight: 800;
       font-size: 40px;
       line-height: 54px;
       color: #FFFFFF;
-      margin-bottom: 32px;
+      margin-bottom: 12px;
     }
     .contact-us__info__input{
       display: flex;
